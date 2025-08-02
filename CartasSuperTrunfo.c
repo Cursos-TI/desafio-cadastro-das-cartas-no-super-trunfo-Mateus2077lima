@@ -33,13 +33,15 @@ int main() {
     printf("\n");
 
     printf("Digite o estado:");
-    scanf("%c",&estado_1);
+    scanf(" %c",&estado_1);
 
     printf("Digite o Codigo da carta:");
     scanf("%s",&codigoCarta_1);
 
     printf("digite o nome da cidade:");
-    scanf("%s",&nomeCidade_1);
+    getchar();
+    fgets(nomeCidade_1, sizeof(nomeCidade_1), stdin);
+    nomeCidade_1[strcspn(nomeCidade_1, "\n")] = 0;
 
     printf("Digite a população da cidade:");
     scanf("%d",&populacao_1);
@@ -61,13 +63,15 @@ int main() {
     printf("\n");
 
     printf("Digite o estado:");
-    scanf("%c",&estado_2);
+    scanf(" %c",&estado_2);
 
     printf("Digite o Codigo da carta:");
     scanf("%s",&codigoCarta_2);
 
     printf("digite o nome da cidade:");
-    scanf("%s",&nomeCidade_2);
+    getchar();
+    fgets(nomeCidade_2, sizeof(nomeCidade_2), stdin);
+    nomeCidade_2[strcspn(nomeCidade_2, "\n")] = 0;
 
     printf("Digite a população da cidade:");
     scanf("%d",&populacao_2);
