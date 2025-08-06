@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
 
 int main() {
     //Declaração das variaveis da primeira carta do jogo
@@ -16,6 +11,8 @@ int main() {
      float areaCidade_1;
      float pibCidade_1;
      int pontosTuristicos_1;
+     float densidadePopulacional_1;
+     float pibPerCapita_1;
 
     //Declaração das variaveis da segunda carta do jogo
 
@@ -26,6 +23,8 @@ int main() {
      float areaCidade_2;
      float pibCidade_2;
      int pontosTuristicos_2;
+     float densidadePopulacional_2;
+     float pibPerCapita_2;
 
     // Cadastro da ptimeira carta do jogo
     
@@ -85,6 +84,16 @@ int main() {
     printf("Digite a quantidade de pontos turisticos da cidade:");
     scanf("%d",&pontosTuristicos_2);
 
+    //Calculo da densida populacional e pib per capita da primeira carta
+
+    densidadePopulacional_1 = (float)populacao_1 / areaCidade_1;
+    pibPerCapita_1 = (pibCidade_1*100000) / (float)(populacao_1/10000);
+
+    //Calculo da densida populacional e pib per capita da segunda carta
+
+    densidadePopulacional_2 = (float)populacao_2 / areaCidade_2;
+    pibPerCapita_2 = (pibCidade_2*100000) / (float)(populacao_2/10000);
+
     // Exibição dos Dados da primeira carta do jogo
 
     printf("\n");
@@ -106,6 +115,10 @@ int main() {
 
     printf("Número de Pontos Turísticos: %d \n", pontosTuristicos_1);
 
+    printf("Densidade Populacional: %.2f hab/km² \n", densidadePopulacional_1);
+
+    printf("PIB per Capita: %.2f reais \n", pibPerCapita_1);
+
     //Exibição dos Dados da segunda carta do jogo
 
      printf("\n");
@@ -126,6 +139,10 @@ int main() {
     printf("PIB: %.2f bilhões de reais \n", pibCidade_2);
 
     printf("Número de Pontos Turísticos: %d \n", pontosTuristicos_2);
+
+    printf("Densidade Populacional: %.2f hab/km² \n", densidadePopulacional_2);
+
+    printf("PIB per Capita: %.2f reais \n", pibPerCapita_2);
 
 
     
