@@ -1,6 +1,1 @@
-# Força arquivos .c a serem contados como C
-*.c linguist-language=C
 
-# Ignora arquivos que não contam como código
-*.html linguist-detectable=false
-*.css linguist-detectable=false
