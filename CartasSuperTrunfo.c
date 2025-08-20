@@ -99,11 +99,12 @@ int main() {
 
     //Calculo do super poder da primeira carta do jogo
 
-    superPoder_1 = (float)populacao_1 + areaCidade_1 + pibCidade_1 + (float)pontosTuristicos_1 + pibPerCapita_1 - densidadePopulacional_1;
+    superPoder_1 = (float)populacao_1 + areaCidade_1 + pibCidade_1 + (float)pontosTuristicos_1 + pibPerCapita_1 + (1 / densidadePopulacional_1);
+
 
     //calculo do super poder da segunda carta do jogo
 
-    superPoder_2 = (float)populacao_2 + areaCidade_2 + pibCidade_2 + (float)pontosTuristicos_2 + pibPerCapita_2 - densidadePopulacional_2;
+    superPoder_2 = (float)populacao_2 + areaCidade_2 + pibCidade_2 + (float)pontosTuristicos_2 + pibPerCapita_2 + (1 / densidadePopulacional_2);
 
 
     // Exibição dos Dados da primeira carta do jogo
@@ -158,15 +159,85 @@ int main() {
 
     //Comparação das cartas do jogo
 
-    printf("Comparação das Cartas: \n");
-    printf("População: Carta 1(%d) \n",populacao_1 > populacao_2);
-    printf("Area: Carta 1(%d) \n",areaCidade_1 > areaCidade_2);
-    printf("PIB: Carta 1(%d) \n",pibCidade_1 > pibCidade_2);
-    printf("Pontos Turisticos: Carta 1(%d) \n",pontosTuristicos_1 > pontosTuristicos_2);
-    printf("Densidade Populacional: Carta 1(%d) \n",densidadePopulacional_1 < densidadePopulacional_2);
-    printf("PIB per Capita: Carta 1(%d) \n",pibPerCapita_1 > pibPerCapita_2);
-    printf("Super Poder: Carta 1(%d) \n",superPoder_1 > superPoder_2);
-
+    printf("\n");
     
+    printf("Comparação das Cartas: \n");
+
+    printf("\n");
+
+    printf("Carta 1 - %s : %lu \n", nomeCidade_1, populacao_1);
+    printf("Carta 2 - %s : %lu \n", nomeCidade_2, populacao_2);
+    if (populacao_1 > populacao_2){
+        printf("Resultado: Carta 1 (%s) venceu \n", nomeCidade_1);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu \n", nomeCidade_2);
+    }
+
+    printf("\n");
+   
+    printf("Carta 1 - tem area : %.2f km² \n", areaCidade_1);
+    printf("Carta 2 - tem area : %.2f km² \n", areaCidade_2);
+    if (areaCidade_1 > areaCidade_2){
+        printf("Resultado: Carta 1 (%s) venceu \n", nomeCidade_1);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu \n", nomeCidade_2);
+    }
+
+    printf("\n");
+
+
+    printf("Carta 1 - PIB : %.2f bilhões de reais \n", pibCidade_1);
+    printf("Carta 2 - PIB : %.2f bilhões de reais \n", pibCidade_2);
+    if (pibCidade_1 > pibCidade_2){
+        printf("Resultado: Carta 1 (%s) venceu \n", nomeCidade_1);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu \n", nomeCidade_2);
+    }
+
+    printf("\n");
+
+
+    printf("Carta 1 - Pontos Turisticos : %d \n", pontosTuristicos_1);
+    printf("Carta 2 - Pontos Turisticos : %d \n", pontosTuristicos_2);
+    if (pontosTuristicos_1 > pontosTuristicos_2){
+        printf("Resultado: Carta 1 (%s) venceu \n", nomeCidade_1);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu \n", nomeCidade_2);
+    }
+
+    printf("\n");
+
+
+    printf("Carta 1 - Densidade Populacional : %.2f hab/km² \n", densidadePopulacional_1);
+    printf("Carta 2 - Densidade Populacional : %.2f hab/km² \n", densidadePopulacional_2);
+    if (densidadePopulacional_1 < densidadePopulacional_2){
+        printf("Resultado: Carta 1 (%s) venceu \n", nomeCidade_1);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu \n", nomeCidade_2);
+    }
+
+    printf("\n");
+
+
+    printf("Carta 1 - PIB Per Capita : %.2f reais \n", pibPerCapita_1);
+    printf("Carta 2 - PIB Per Capita : %.2f reais \n", pibPerCapita_2);
+    if (pibPerCapita_1 > pibPerCapita_2){
+        printf("Resultado: Carta 1 (%s) venceu \n", nomeCidade_1);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu \n", nomeCidade_2);
+    }
+
+    printf("\n");
+
+    printf("Carta 1 - Super Poder : %.2f \n", superPoder_1);
+    printf("Carta 2 - Super Poder : %.2f \n", superPoder_2);
+    if (superPoder_1 > superPoder_2){
+        printf("Resultado: Carta 1 (%s) venceu \n", nomeCidade_1);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu \n", nomeCidade_2);
+    }
+
+
+
     return 0;
 }
