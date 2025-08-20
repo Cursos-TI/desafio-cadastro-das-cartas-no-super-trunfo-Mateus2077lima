@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 
 int main() {
@@ -7,24 +8,26 @@ int main() {
      char estado_1;
      char codigoCarta_1[5];
      char nomeCidade_1[30];
-     int populacao_1;
+     unsigned long int populacao_1;
      float areaCidade_1;
      float pibCidade_1;
      int pontosTuristicos_1;
      float densidadePopulacional_1;
      float pibPerCapita_1;
+     float superPoder_1;
 
     //Declaração das variaveis da segunda carta do jogo
 
      char estado_2;
      char codigoCarta_2[5];
      char nomeCidade_2[30];
-     int populacao_2;
+     unsigned long int populacao_2;
      float areaCidade_2;
      float pibCidade_2;
      int pontosTuristicos_2;
      float densidadePopulacional_2;
      float pibPerCapita_2;
+     float superPoder_2;
 
     // Cadastro da ptimeira carta do jogo
     
@@ -35,7 +38,7 @@ int main() {
     scanf(" %c",&estado_1);
 
     printf("Digite o Codigo da carta:");
-    scanf("%s",&codigoCarta_1);
+    scanf(" %s",codigoCarta_1);
 
     printf("digite o nome da cidade:");
     getchar();
@@ -43,7 +46,7 @@ int main() {
     nomeCidade_1[strcspn(nomeCidade_1, "\n")] = 0;
 
     printf("Digite a população da cidade:");
-    scanf("%d",&populacao_1);
+    scanf("%lu",&populacao_1);
 
     printf("Digite a área  da cidade:");
     scanf("%f",&areaCidade_1);
@@ -65,7 +68,7 @@ int main() {
     scanf(" %c",&estado_2);
 
     printf("Digite o Codigo da carta:");
-    scanf("%s",&codigoCarta_2);
+    scanf("%s",codigoCarta_2);
 
     printf("digite o nome da cidade:");
     getchar();
@@ -73,7 +76,7 @@ int main() {
     nomeCidade_2[strcspn(nomeCidade_2, "\n")] = 0;
 
     printf("Digite a população da cidade:");
-    scanf("%d",&populacao_2);
+    scanf("%lu",&populacao_2);
 
     printf("Digite a área  da cidade:");
     scanf("%f",&areaCidade_2);
@@ -87,12 +90,21 @@ int main() {
     //Calculo da densidade populacional e pib per capita da primeira carta
 
     densidadePopulacional_1 = (float)populacao_1 / areaCidade_1;
-    pibPerCapita_1 = (pibCidade_1*100000) / (float)(populacao_1/10000);
+    pibPerCapita_1 = (pibCidade_1 * 1000000000.0) / populacao_1;
 
     //Calculo da densidade populacional e pib per capita da segunda carta
 
     densidadePopulacional_2 = (float)populacao_2 / areaCidade_2;
-    pibPerCapita_2 = (pibCidade_2*100000) / (float)(populacao_2/10000);
+    pibPerCapita_2 = (pibCidade_2 * 1000000000.0) / populacao_2;
+
+    //Calculo do super poder da primeira carta do jogo
+
+    superPoder_1 = (float)populacao_1 + areaCidade_1 + pibCidade_1 + (float)pontosTuristicos_1 + pibPerCapita_1 - densidadePopulacional_1;
+
+    //calculo do super poder da segunda carta do jogo
+
+    superPoder_2 = (float)populacao_2 + areaCidade_2 + pibCidade_2 + (float)pontosTuristicos_2 + pibPerCapita_2 - densidadePopulacional_2;
+
 
     // Exibição dos Dados da primeira carta do jogo
 
@@ -107,7 +119,7 @@ int main() {
 
     printf("Nome da Cidade: %s \n", nomeCidade_1);
 
-    printf("População: %d \n", populacao_1);
+    printf("População: %lu \n", populacao_1);
 
     printf("Área: %.2f km² \n", areaCidade_1);
 
@@ -132,7 +144,7 @@ int main() {
 
     printf("Nome da Cidade: %s \n", nomeCidade_2);
 
-    printf("População: %d \n", populacao_2);
+    printf("População: %lu \n", populacao_2);
 
     printf("Área: %.2f km² \n", areaCidade_2);
 
@@ -144,6 +156,16 @@ int main() {
 
     printf("PIB per Capita: %.2f reais \n", pibPerCapita_2);
 
+    //Comparação das cartas do jogo
+
+    printf("Comparação das Cartas: \n");
+    printf("População: Carta 1(%d) \n",populacao_1 > populacao_2);
+    printf("Area: Carta 1(%d) \n",areaCidade_1 > areaCidade_2);
+    printf("PIB: Carta 1(%d) \n",pibCidade_1 > pibCidade_2);
+    printf("Pontos Turisticos: Carta 1(%d) \n",pontosTuristicos_1 > pontosTuristicos_2);
+    printf("Densidade Populacional: Carta 1(%d) \n",densidadePopulacional_1 < densidadePopulacional_2);
+    printf("PIB per Capita: Carta 1(%d) \n",pibPerCapita_1 > pibPerCapita_2);
+    printf("Super Poder: Carta 1(%d) \n",superPoder_1 > superPoder_2);
 
     
     return 0;
